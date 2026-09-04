@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-Fix Distribuindo Soluções</title>
+<!-- ==LANDING-CONFIG-INICIO==
+{
+  "marcas": [
+    "Bosch",
+    "Cibra",
+    "Dewalt",
+    "Gedore",
+    "King Tony",
+    "Makita",
+    "Maxtool",
+    "Poxpur",
+    "Soudal",
+    "Stanley",
+    "Starrett",
+    "Tekbond",
+    "E muito mais..."
+  ],
+  "logoImagem": "assets/logo-11-anos-sem-fundo.png",
+  "logoAlt": "S-Fix Distribuindo Soluções",
+  "logoAltura": "60",
+  "heroImagem": "",
+  "sobreImagem": "",
+  "fontTitulo": "'Barlow Condensed',sans-serif",
+  "fontTexto": "'Source Sans 3',sans-serif",
+  "fontGoogleHref": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap",
+  "tamanhoTituloHero": "60",
+  "tamanhoTituloSecao": "40",
+  "tamanhoTexto": "16",
+  "corAzul": "#0f5c8c",
+  "corAzulEscuro": "#0a4468",
+  "corVermelho": "#c81e2c",
+  "corTeal": "#00857c",
+  "corFundo": "#f4f5f6",
+  "corTexto": "#1c1c1c",
+  "corCinza": "#6b7280",
+  "corCabecalho": "#122c6f"
+}
+==LANDING-CONFIG-FIM== -->
+<!-- ==LANDING-FONTE-LINK-INICIO== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- ==LANDING-FONTE-LINK-FIM== -->
+<style>
+  /* ==LANDING-STYLE-INICIO== */
+  :root{
+    --azul:#0f5c8c;
+    --cabecalho-fundo:#122c6f;
+    --azul-escuro:#0a4468;
+    --vermelho:#c81e2c;
+    --teal:#00857c;
+    --bg:#f4f5f6;
+    --card:#ffffff;
+    --texto:#1c1c1c;
+    --cinza:#6b7280;
+    --font-titulo:'Barlow Condensed',sans-serif;
+    --font-texto:'Source Sans 3',sans-serif;
+    --tamanho-titulo-hero:60px;
+    --tamanho-titulo-secao:40px;
+    --tamanho-texto:16px;
+    --hero-bg-imagem:none;
+  }
+  /* ==LANDING-STYLE-FIM== */
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-texto);
+    color:var(--texto);
+    background:var(--bg);
+    line-height:1.5;
+  }
+  h1,h2,h3{
+    font-family:var(--font-titulo);
+    letter-spacing:.01em;
+    line-height:1.05;
+  }
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:6px;font-weight:700;
+    font-size:15.5px;border:2px solid transparent;cursor:pointer;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primario{background:var(--vermelho);color:#fff;}
+  .btn-primario:hover{background:#a91824;}
+  .btn-secundario{background:transparent;border-color:rgba(255,255,255,.55);color:#fff;}
+  .btn-secundario:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--cabecalho-fundo);
+    border-bottom:3px solid var(--vermelho);
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .logo{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:800;font-size:28px;color:#fff;letter-spacing:.02em;
+  }
+  .logo span{color:var(--vermelho);}
+  nav ul{list-style:none;display:flex;gap:32px;}
+  nav a{color:#dce7ee;font-weight:600;font-size:15px;transition:color .15s;}
+  nav a:hover{color:#fff;}
+  .header-cta{display:none;}
+  @media(min-width:760px){
+    .header-cta{display:inline-flex;padding:10px 20px;font-size:14px;}
+  }
+  .nav-desktop{display:none;}
+  @media(min-width:760px){.nav-desktop{display:block;}}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background-image: var(--hero-bg-imagem), linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 62%, var(--teal) 100%);
+    background-size: cover, cover;
+    background-position: center, center;
+    color:#fff;
+    overflow:hidden;
+    padding:96px 0 120px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(255,255,255,.05) 0 2px, transparent 2px 46px);
+    pointer-events:none;
+  }
+  .hero.tem-foto-fundo::after{
+    content:"";
+    position:absolute;inset:0;
+    background:rgba(9,30,46,.5);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:680px;}
+  .eyebrow{
+    display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:#bfe3ff;
+    border:1px solid rgba(255,255,255,.35);border-radius:999px;
+    padding:6px 16px;margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(38px,6vw,var(--tamanho-titulo-hero));font-weight:800;color:#fff;margin-bottom:20px;
+  }
+  .hero h1 em{font-style:normal;color:#ffd8db;}
+  .hero p.lead{font-size:clamp(16px,2vw,calc(var(--tamanho-texto) + 2px));color:#dce9f2;max-width:520px;margin-bottom:34px;}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:14px;}
+
+  /* stat strip */
+  .stat-strip{
+    position:relative;margin-top:64px;
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid rgba(255,255,255,.22);
+    padding-top:28px;max-width:640px;
+  }
+  .stat-strip div + div{border-left:1px solid rgba(255,255,255,.22);padding-left:24px;}
+  .stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:34px;color:#fff;}
+  .stat-label{font-size:13px;color:#bcd8e8;text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+
+  /* ===== SECTIONS ===== */
+  section{padding:88px 0;}
+  .section-head{max-width:620px;margin-bottom:52px;}
+  .kicker{
+    color:var(--vermelho);font-weight:700;font-size:13px;
+    text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;display:block;
+  }
+  .section-head h2{font-size:clamp(28px,4vw,var(--tamanho-titulo-secao));color:var(--azul-escuro);font-weight:800;}
+  .section-head p{color:var(--cinza);margin-top:14px;font-size:var(--tamanho-texto);}
+
+  /* sobre */
+  .sobre{background:var(--card);}
+  .sobre-grid{display:grid;gap:48px;align-items:center;}
+  @media(min-width:860px){.sobre-grid{grid-template-columns:1fr 1fr;}}
+  .sobre-texto p{color:#3f4650;margin-bottom:16px;font-size:var(--tamanho-texto);}
+  .sobre-painel{
+    background:var(--bg);border-radius:12px;padding:32px;
+    border-left:5px solid var(--teal);
+  }
+  .sobre-painel ul{list-style:none;display:flex;flex-direction:column;gap:18px;}
+  .sobre-painel li{display:flex;gap:14px;align-items:flex-start;}
+  .check{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;
+    background:var(--teal);color:#fff;font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
+  .sobre-painel strong{display:block;color:var(--azul-escuro);font-size:15.5px;}
+  .sobre-painel span{color:var(--cinza);font-size:14.5px;}
+
+  /* diferenciais */
+  .diferenciais{background:var(--bg);}
+  .cards{display:grid;gap:24px;}
+  @media(min-width:640px){.cards{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:980px){.cards{grid-template-columns:repeat(4,1fr);}}
+  .card{
+    background:var(--card);border-radius:12px;padding:28px 24px;
+    box-shadow:0 1px 3px rgba(10,68,104,.08);
+    border-top:4px solid var(--azul);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(10,68,104,.14);}
+  .card-icon{
+    width:44px;height:44px;border-radius:10px;background:var(--azul-escuro);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:20px;margin-bottom:18px;
+  }
+  .card h3{font-size:20px;color:var(--azul-escuro);margin-bottom:8px;font-weight:700;}
+  .card p{color:var(--cinza);font-size:14.5px;}
+
+  /* como funciona */
+  .passos{counter-reset:passo;}
+  .passos-grid{display:grid;gap:36px;}
+  @media(min-width:760px){.passos-grid{grid-template-columns:repeat(3,1fr);}}
+  .passo{position:relative;padding-left:56px;}
+  .passo::before{
+    counter-increment:passo;content:counter(passo);
+    position:absolute;left:0;top:0;
+    width:40px;height:40px;border-radius:8px;
+    background:var(--azul-escuro);color:#fff;
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .passo h3{font-size:19px;color:var(--azul-escuro);margin-bottom:6px;}
+  .passo p{color:var(--cinza);font-size:14.5px;}
+
+  /* marcas */
+  .marcas{background:var(--card);text-align:center;}
+  .marcas-faixa{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:8px;
+  }
+  .marca-chip{
+    background:var(--bg);border:1px solid #e2e6e9;border-radius:999px;
+    padding:12px 26px;font-weight:700;color:var(--azul-escuro);font-size:15px;
+    display:inline-block;cursor:default;
+  }
+
+  /* CTA final */
+  .cta-final{
+    background:linear-gradient(120deg,var(--vermelho),#9c1622);
+    color:#fff;text-align:center;
+  }
+  .cta-final h2{font-size:clamp(26px,4vw,38px);margin-bottom:14px;color:#fff;}
+  .cta-final p{color:#ffd9db;max-width:520px;margin:0 auto 32px;font-size:16.5px;}
+  .cta-final .btn-primario{background:#fff;color:var(--vermelho);}
+  .cta-final .btn-primario:hover{background:#ffe9ea;}
+  .cta-final .btn-secundario{border-color:rgba(255,255,255,.6);}
+
+  /* footer */
+  footer{background:var(--azul-escuro);color:#cfe0ea;padding:44px 0 28px;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;margin-bottom:28px;}
+  footer .logo{margin-bottom:8px;}
+  footer p.desc{max-width:320px;font-size:14px;color:#a9c2d1;}
+  .footer-col h4{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:14px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .footer-col a{font-size:14.5px;color:#bcd3e0;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:20px;
+    font-size:13px;color:#8fadbf;text-align:center;
+  }
+
+  .placeholder{outline:1px dashed rgba(255,255,255,.5);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <!-- ==LANDING-LOGO-HEADER-INICIO== -->
+    <img src="assets/logo-11-anos-sem-fundo.png" alt="S-Fix Distribuindo Soluções" style="height:60px; display:block;">
+    <!-- ==LANDING-LOGO-HEADER-FIM== -->
+    <nav class="nav-desktop">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+      </ul>
+    </nav>
+    <a href="catalogo.html" class="btn btn-primario header-cta">Ver catálogo</a>
+  </div>
+</header>
+
+<!-- ==LANDING-HERO-TAG-INICIO== -->
+<section class="hero">
+<!-- ==LANDING-HERO-TAG-FIM== -->
+  <div class="container hero-inner">
+    <span class="eyebrow">Distribuidora de ferramentas e soluções</span>
+    <h1>Do estoque certo à <em>entrega certa</em>, para quem revende ferramentas.</h1>
+    <p class="lead">A S-Fix conecta lojistas e profissionais às melhores marcas do mercado, com catálogo sempre atualizado e atendimento direto — sem enrolação.</p>
+    <div class="hero-btns">
+      <a href="catalogo.html" class="btn btn-primario">📋 Ver catálogo completo</a>
+      <a href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20S-Fix%20e%20quero%20saber%20mais" class="btn btn-secundario" target="_blank" rel="noopener">Falar com um vendedor</a>
+    </div>
+
+    <div class="stat-strip">
+      <div>
+        <div class="stat-num">+500</div>
+        <div class="stat-label">itens no catálogo</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">catálogo digital</div>
+      </div>
+      <div>
+        <div class="stat-num">24h</div>
+        <div class="stat-label">resposta a orçamentos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-texto">
+      <span class="kicker">Quem somos</span>
+      <h2 style="font-size:clamp(26px,4vw,36px);color:var(--azul-escuro);font-weight:800;margin-bottom:18px;">Uma distribuidora feita para agilizar o seu dia a dia</h2>
+      <p>A S-Fix Distribuindo Soluções trabalha para que lojistas e profissionais do setor encontrem, com rapidez, as ferramentas e peças que precisam — com um catálogo sempre em dia e um atendimento próximo, direto pelo WhatsApp.</p>
+      <p>Nosso catálogo digital funciona até offline: seu cliente consulta produtos, preços e códigos de onde estiver, e você fecha o pedido sem perder tempo.</p>
+    </div>
+    <div class="sobre-painel">
+      <!-- ==LANDING-SOBRE-IMG-INICIO== -->
+      
+      <!-- ==LANDING-SOBRE-IMG-FIM== -->
+      <ul>
+        <li>
+          <div class="check">✓</div>
+          <div><strong>Catálogo sempre atualizado</strong><span>Novos produtos em tempo real.</span></div>
+        </li>
+        <li>
+          <div class="check">✓</div>
+          <div><strong>Funciona offline</strong><span>Seu vendedor consulta o catálogo mesmo sem internet.</span></div>
+        </li>
+        <li>
+          <div class="check">✓</div>
+          <div><strong>Atendimento direto</strong><span>Orçamento e pedido em poucos cliques, via WhatsApp.</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="diferenciais" id="diferenciais">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Diferenciais</span>
+      <h2>Por que revender com a S-Fix</h2>
+      <p>Tudo pensado para facilitar a rotina de quem compra para revender.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>Portfólio amplo</h3>
+        <p>Ferramentas e acessórios de marcas reconhecidas em um único catálogo.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Resposta rápida</h3>
+        <p>Orçamentos e dúvidas respondidos com agilidade, direto com um vendedor.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Catálogo no celular</h3>
+        <p>Instale como app, consulte produtos e códigos onde estiver, mesmo offline.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Parceria de longo prazo</h3>
+        <p>Atendimento pensado para acompanhar o crescimento do seu negócio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="passos" id="como-funciona">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Como funciona</span>
+      <h2>Do catálogo ao pedido em 3 passos</h2>
+    </div>
+    <div class="passos-grid">
+      <div class="passo">
+        <h3>Explore o catálogo</h3>
+        <p>Veja produtos, fotos e códigos organizados por marca e categoria.</p>
+      </div>
+      <div class="passo">
+        <h3>Monte seu pedido</h3>
+        <p>Separe os itens de interesse no carrinho e envie para seu vendedor.</p>
+      </div>
+      <div class="passo">
+        <h3>Feche pelo WhatsApp</h3>
+        <p>Envie sua lista direto para um vendedor e receba o orçamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="marcas" id="marcas">
+  <div class="container">
+    <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <span class="kicker">Marcas parceiras</span>
+      <h2>Marcas de confiança no nosso catálogo</h2>
+    </div>
+    <div class="marcas-faixa">
+      <!-- ==LANDING-MARCAS-INICIO== -->
+      <span class="marca-chip">Bosch</span>
+      <span class="marca-chip">Cibra</span>
+      <span class="marca-chip">Dewalt</span>
+      <span class="marca-chip">Gedore</span>
+      <span class="marca-chip">King Tony</span>
+      <span class="marca-chip">Makita</span>
+      <span class="marca-chip">Maxtool</span>
+      <span class="marca-chip">Poxpur</span>
+      <span class="marca-chip">Soudal</span>
+      <span class="marca-chip">Stanley</span>
+      <span class="marca-chip">Starrett</span>
+      <span class="marca-chip">Tekbond</span>
+      <span class="marca-chip">E muito mais...</span>
+      <!-- ==LANDING-MARCAS-FIM== -->
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="contato">
+  <div class="container">
+    <h2>Pronto para ver o catálogo completo?</h2>
+    <p>Fale agora com a equipe S-Fix e receba seu orçamento sem compromisso.</p>
+    <div class="hero-btns" style="justify-content:center;">
+      <a href="catalogo.html" class="btn btn-primario">📋 Acessar catálogo</a>
+      <a href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20S-Fix%20e%20quero%20saber%20mais" class="btn btn-secundario" target="_blank" rel="noopener">💬 Chamar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <!-- ==LANDING-LOGO-FOOTER-INICIO== -->
+        <img src="assets/logo-11-anos-sem-fundo.png" alt="S-Fix Distribuindo Soluções" style="height:60px; display:block;">
+        <!-- ==LANDING-LOGO-FOOTER-FIM== -->
+        <p class="desc">Distribuindo soluções em ferramentas para quem revende e para quem faz.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/55SEUNUMERO" class="placeholder" target="_blank" rel="noopener">WhatsApp: (seu número)</a></li>
+          <li><a href="mailto:contato@seudominio.com" class="placeholder">E-mail: contato@seudominio.com</a></li>
+          <li><a href="https://instagram.com/seuinstagram" class="placeholder" target="_blank" rel="noopener">Instagram: @seuinstagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 S-Fix Distribuindo Soluções. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+    <!-- ==VENDEDOR-WHATSAPP-INICIO== -->
+    <script>
+    (function () {
+      var VENDEDORES = {
+        "Ricardo": "556699039231",
+        "Romario": "556699947870",
+        "Paulo": "556699281818",
+        "Matheus": "556696285258",
+        "Khaliu": "5566996931818",
+        "Kassio": "556699030326"
+      };
+      var NUMERO_PADRAO = "556699039231";
+
+      var params = new URLSearchParams(window.location.search);
+      // .trim() e comparação sem diferenciar maiúscula/minúscula: evita que um link
+      // digitado como ?v=matheus (ou com espaço) caia no número padrão sem avisar
+      var codigoVendedorBruto = (params.get("v") || "").trim();
+      var codigoVendedor = Object.keys(VENDEDORES).find(function (chave) {
+        return chave.toLowerCase() === codigoVendedorBruto.toLowerCase();
+      });
+      var numero = (codigoVendedor && VENDEDORES[codigoVendedor]) || NUMERO_PADRAO;
+
+      // Salva o vendedor já aqui na landing, assim que detectado — reforço para
+      // o caso do ?v=... não chegar até o catalogo.html por algum motivo (ex:
+      // pessoa abre o catálogo direto pela barra de endereço, sem clicar em
+      // "Ver catálogo"). Assim o catalogo.html encontra o vendedor certo no
+      // localStorage mesmo sem o parâmetro na URL dele.
+      if (codigoVendedor) {
+        try { localStorage.setItem('sfix_vendedor_numero', numero); } catch (e) {}
+      }
+
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+        var textoAtual = "Olá, vim pelo site da S-Fix e quero saber mais";
+        try {
+          textoAtual = new URL(link.href).searchParams.get("text") || textoAtual;
+        } catch (e) {}
+        link.href = "https://wa.me/" + numero + "?text=" + encodeURIComponent(textoAtual);
+      });
+
+      // Leva o código do vendedor (?v=...) junto para o catálogo, senão o link
+      // dele se perde ao clicar em "Ver catálogo" e o orçamento cai no número padrão.
+      // Usa href^="catalogo" (em vez de href="catalogo.html") porque o Netlify,
+      // com "Pretty URLs" ativado, reescreve catalogo.html para catalogo sozinho.
+      if (codigoVendedor && VENDEDORES[codigoVendedor]) {
+        document.querySelectorAll('a[href^="catalogo"]').forEach(function (link) {
+          var hrefAtual = link.getAttribute('href');
+          var partes = hrefAtual.split('?');
+          var caminho = partes[0];
+          var restoQuery = partes[1] ? '&' + partes[1] : '';
+          link.setAttribute('href', caminho + '?v=' + encodeURIComponent(codigoVendedor) + restoQuery);
+        });
+      }
+    })();
+    </script>
+    <!-- ==VENDEDOR-WHATSAPP-FIM== -->
+</body>
+</html>
+
